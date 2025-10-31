@@ -1,0 +1,67 @@
+const fs = require('fs');
+
+const content = `
+====================================
+TASK MANAGEMENT API - RESPONSES DOC
+====================================
+
+1️ Endpoint: GET /
+-------------------
+Description: Returns a simple message confirming the API is running.
+
+Request:
+GET http://localhost:3000/
+
+Response:
+Task Management API is running!
+
+
+2️Endpoint: GET /tasks
+------------------------
+Description: Returns a list of all available tasks.
+
+Request:
+GET http://localhost:3000/tasks
+
+Response (example JSON):
+[
+  {
+    "id": 1,
+    "title": "Learn Node.js",
+    "completed": false,
+    "priority": "high",
+    "createdAt": "2025-10-31T10:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "title": "Build REST API",
+    "completed": true,
+    "priority": "medium",
+    "createdAt": "2025-10-31T10:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "title": "Test API with Postman",
+    "completed": false,
+    "priority": "low",
+    "createdAt": "2025-10-31T10:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "title": "Write Documentation",
+    "completed": false,
+    "priority": "medium",
+    "createdAt": "2025-10-31T10:00:00.000Z"
+  },
+  {
+    "id": 5,
+    "title": "Deploy App",
+    "completed": false,
+    "priority": "high",
+    "createdAt": "2025-10-31T10:00:00.000Z"
+  }
+]
+`;
+
+fs.writeFileSync('api-responses.txt', content.trim());
+console.log('api-responses.txt file generated successfully!');
